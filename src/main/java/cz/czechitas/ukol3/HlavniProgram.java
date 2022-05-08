@@ -45,9 +45,17 @@ public class HlavniProgram {
         mujPC.vypniSe();
 
         mujPC.zapniSe();
-        mujPC.vytvorSouborOVelikosti(1000000L);
+
+        Disk mujDruhyDisk = new Disk();
+        mujDruhyDisk.setKapacita(510_770_802_688L);
+        mujDruhyDisk.setVyuziteMisto(100_000_000_000L);
+
+        mujPC.setDruhyPevnyDisk(mujDruhyDisk);
+
+        mujPC.vytvorSouborOVelikosti(0L);
         System.out.println(mujPC);
-        mujPC.vymazSouboryOVelikosti(2000000000000L);
+
+        mujPC.vymazSouboryOVelikosti(250000000000L);
         System.out.println(mujPC);
 
     }
