@@ -7,6 +7,34 @@ public class Pocitac {
     private Pamet ram;
     private Disk pevnyDisk;
 
+    public void vytvorSouborOVelikosti(long velikost) {
+        if (jeZapnuty()) {
+            if ((pevnyDisk.getVyuziteMisto()+velikost)> pevnyDisk.getKapacita()) {
+                System.err.println("Disk je plný, soubor přesahuje kapacitu disku.");
+            } else {
+                pevnyDisk.setVyuziteMisto(pevnyDisk.getVyuziteMisto()+velikost);
+                System.out.println("Soubor přidán na disk. Aktuální použitá kapacita disku je" + pevnyDisk.getVyuziteMisto());
+            }
+        } else {
+            System.err.println("Počítač je vypnutý, není možné přidat soubor.");
+        }
+    }
+
+    public void vymazSouboryOVelikosti(long velikost) {
+        if (jeZapnuty()) {
+            if (pevnyDisk.getVyuziteMisto()<velikost){
+                System.err.println("Soubory není možné smazat, velikost přesahuje využitou kapacitu disku.");
+            } else {
+                pevnyDisk.setVyuziteMisto(pevnyDisk.getVyuziteMisto()-velikost);
+                System.out.println("Soubory byly vymazány. Aktuální využitá kapacita disku je" + pevnyDisk.getVyuziteMisto());
+            }
+        } else {
+            System.err.println("Počítač je vypnutý, není možné vymazat soubory.");
+        }
+    }
+
+
+
     public boolean jeZapnuty() {
         return jeZapnuty;
     }

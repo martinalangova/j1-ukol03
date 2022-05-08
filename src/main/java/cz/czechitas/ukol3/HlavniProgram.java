@@ -37,12 +37,18 @@ public class HlavniProgram {
         System.out.println(mujPC);
 
         mujPC.zapniSe();
-        mujPC.zapniSe();  // Vypise chybu, protoze pocitac uz bezi
+        mujPC.zapniSe();  // Vypíše chybu, protože počítač je už zapnutý
         System.out.println(mujPC);
         mujPC.vypniSe();
 
-        mujPC.vypniSe(); // Nevypise chybu, ale nic neprovede,
-        mujPC.vypniSe(); // protoze pocitac je uz vypnuty
+        mujPC.vypniSe(); // Nevypíše chybu, ale nic neprovede,protože počítač je už vypnutý
+        mujPC.vypniSe();
+
+        mujPC.zapniSe();
+        mujPC.vytvorSouborOVelikosti(1000000L);
+        System.out.println(mujPC);
+        mujPC.vymazSouboryOVelikosti(2000000000000L);
+        System.out.println(mujPC);
 
     }
 
